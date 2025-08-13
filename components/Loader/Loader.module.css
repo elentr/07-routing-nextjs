@@ -1,0 +1,60 @@
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 80px;
+  padding: 0 20px;
+  font-size: 16px;
+  /* position: relative; */
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background-color: #e8f4fd;
+  border-color: #b6d4fe;
+}
+
+.text {
+  font-size: 16px;
+  text-align: center;
+  max-width: 600px;
+  /* margin: 40px auto; */
+  padding: 12px 16px;
+  color: #084298;
+}
+
+.loader {
+  /* position: relative; */
+  width: 28px;
+  height: 28px;
+  background: #084298;
+  transform: rotateX(65deg) rotate(45deg);
+  /* remove bellows command for perspective change
+    transform: perspective(200px) rotateX(65deg) rotate(45deg);  */
+  color: #555;
+  animation: layers1 1s linear infinite alternate;
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+  animation: layerTr 1s linear infinite alternate;
+}
+
+@keyframes layers1 {
+  0% {
+    box-shadow: 0px 0px 0 0px;
+  }
+  90%,
+  100% {
+    box-shadow: 20px 20px 0 -4px;
+  }
+}
+@keyframes layerTr {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(-25px, -25px) scale(1);
+  }
+}
