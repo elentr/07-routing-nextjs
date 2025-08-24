@@ -12,16 +12,14 @@ const tags = [
 
 export default function SidebarNotes() {
   return (
-    <aside>
-      <ul className={css.menuList}>
-        {tags.map(tag => (
-          <li key={tag.id} className={css.menuItem}>
-            <Link href={`/notes/filter/${tag.id}`} className={css.menuLink}>
-              {tag.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </aside>
+    <ul className={css.menuList}>
+      {tags.map(tag => (
+        <li key={tag.id} className={css.menuItem}>
+          <Link href={`/notes/filter/${tag.id}`} className={css.menuLink}>
+            {tag.name}
+          </Link>
+        </li>
+      ))}
+    </ul>
   );
 }
