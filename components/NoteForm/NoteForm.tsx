@@ -34,7 +34,7 @@ const AddNoteSchema = Yup.object().shape({
     .required('Tag is required'),
 });
 
-export default function NoteForm({ onCloseModal, onSuccess }: NoteFormProps) {
+export default function NoteForm({ onCloseModal }: NoteFormProps) {
   const fieldId = useId();
   const queryClient = useQueryClient();
 
@@ -42,7 +42,6 @@ export default function NoteForm({ onCloseModal, onSuccess }: NoteFormProps) {
     mutationFn: createNote,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['notes'] });
-      onSuccess ? onSuccess() : onCloseModal(); // виклик або onSuccess, або onCloseModal
     },
   });
 
